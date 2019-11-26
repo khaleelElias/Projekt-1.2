@@ -14,9 +14,10 @@ import FirebaseFirestore
 class HomeViewController: UIViewController {
     @IBOutlet weak var lastScore: UILabel!
     
+    @IBOutlet weak var homeNavbar: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 100);
         let db = Firestore.firestore();
         let user = Auth.auth().currentUser;
         if user != nil {

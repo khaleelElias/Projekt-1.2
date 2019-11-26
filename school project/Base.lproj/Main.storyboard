@@ -290,7 +290,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="YlU-ps-AeB" kind="show" id="h2p-rW-2ia"/>
+                                            <segue destination="YlU-ps-AeB" kind="show" id="TaM-KU-Swd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -333,21 +333,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SBa-bc-E6Y"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yxa-zQ-S1b"/>
+                    <navigationItem key="navigationItem" id="yxa-zQ-S1b" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>
+                        <outlet property="homeNavbar" destination="yxa-zQ-S1b" id="n3F-9R-3AD"/>
                         <outlet property="lastScore" destination="YWD-QI-vnG" id="znh-6F-ZID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wld-G2-g1Z" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3183" y="65"/>
+            <point key="canvasLocation" x="3665" y="52"/>
         </scene>
         <!--Holidays Table View Controller-->
         <scene sceneID="lHg-by-Kiy">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="YlU-ps-AeB" customClass="HolidaysTableViewController" customModule="API" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YlU-ps-AeB" customClass="HolidaysTableViewController" customModule="school_project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fFu-wd-eWB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -497,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWu-93-fEO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4383" y="23"/>
+            <point key="canvasLocation" x="5292.753623188406" y="22.767857142857142"/>
         </scene>
         <!--End View Controller-->
         <scene sceneID="nSb-HY-60E">
@@ -530,7 +531,7 @@
                                 <rect key="frame" x="101" y="620" width="200" height="200"/>
                                 <state key="normal" image="restart"/>
                                 <connections>
-                                    <segue destination="N5M-TB-b4Z" kind="show" id="rjW-Um-qqM"/>
+                                    <segue destination="N5M-TB-b4Z" kind="show" id="rpg-gZ-5fO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -568,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swr-BP-9B7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5757.971014492754" y="22.767857142857142"/>
+            <point key="canvasLocation" x="6668.115942028986" y="22.767857142857142"/>
         </scene>
     </scenes>
     <resources>
