@@ -40,11 +40,11 @@ class LogInViewController: UIViewController {
             @IBAction func logInTapped(_ sender: Any) {
                 //Validate text field
                 
-                //Create cleaned version of the text
+                //MARK:Create cleaned version of the text
                 let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                 let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                 
-                //signing in the user
+                //MARK:signing in the user
                 Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                     if error != nil{
                         self.errorLabel.text = error!.localizedDescription

@@ -34,7 +34,7 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // MARK: fetching data from database
          self.ref = Database.database().reference()
          var count = 0;
          self.ref.child("Question").observe(.value) { (snapshot) in
@@ -56,8 +56,8 @@ class QuizViewController: UIViewController {
     }
     
     
-    
-
+        
+    // MARK: checking the answers
     @IBAction func option1Tapped(_ sender: Any) {
         if option1.titleLabel?.text == self.rightAnswer && !alreadyClicked  {
             option1.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
@@ -109,7 +109,7 @@ class QuizViewController: UIViewController {
     }
     
    
-    
+    //MARK:showing the data to the user
     func displayOneQuestion() {
         self.questionLabel.text = self.allQuestions[currentQuestion].Question
         self.option1.setTitle(self.allQuestions[currentQuestion].Answer1, for: .normal)
@@ -125,13 +125,13 @@ class QuizViewController: UIViewController {
         currentQuestion += 1
     }
     
-    
+    //navigate to endscreen
     func transitionToEnd(){
         let endViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.EndViewController) as? EndViewController
         view.window?.rootViewController = endViewController
         view.window?.makeKeyAndVisible()
         endViewController?.scoreNrTextField.text = String(self.score)
-        
+        //store the score in database
         let db = Firestore.firestore();
             let user = Auth.auth().currentUser;
             if user != nil {

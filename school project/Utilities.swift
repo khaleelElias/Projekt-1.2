@@ -44,7 +44,7 @@ class Utilities {
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.black
     }
-    
+    //MARK: check password
     static func isPasswordValid(_ password : String) -> Bool {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")

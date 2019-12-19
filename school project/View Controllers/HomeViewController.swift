@@ -18,15 +18,18 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 100);
+        //MARK:show score
         let db = Firestore.firestore();
         let user = Auth.auth().currentUser;
-        if user != nil {
+        if user != nil { //maping to "users" collection
             let dbDoc = db.collection("users").document(user?.uid ?? "")
             dbDoc.getDocument { (document, error) in
                 if let document = document, document.exists{
+                    //show the score from database
                     let score = document.get("score").map(String.init(describing:)) ?? "nil"
                     self.lastScore.text = score
                     } else {
+                        self.lastScore.text = "0"
                         print("Document does not exist")
                     }
                 }

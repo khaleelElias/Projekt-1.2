@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="driver app logo" translatesAutoresizingMaskIntoConstraints="NO" id="urD-Gq-lg2">
-                                <rect key="frame" x="0.0" y="287" width="414" height="263"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="402"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver License Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ9-WO-k0C">
                                 <rect key="frame" x="20" y="165" width="374" height="68"/>
@@ -32,7 +32,7 @@
                             <constraint firstItem="BZ9-WO-k0C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="121" id="JhZ-ex-Ran"/>
                             <constraint firstItem="BZ9-WO-k0C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gs0-lF-2x2"/>
                             <constraint firstItem="urD-Gq-lg2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="he3-5m-F0s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="urD-Gq-lg2" secondAttribute="bottom" constant="312" id="mxQ-sg-gEQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="urD-Gq-lg2" secondAttribute="bottom" constant="173" id="mxQ-sg-gEQ"/>
                             <constraint firstItem="urD-Gq-lg2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="243" id="n4x-T1-pMX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZ9-WO-k0C" secondAttribute="trailing" constant="20" id="sdo-B2-u4X"/>
                         </constraints>

@@ -44,12 +44,12 @@ class SignUpViewController: UIViewController {
 
             // Check the fields and validate that data is correct. if everything is correct this method returns nil.Otherwise it returns the error message
             func validateFields() ->String?{
-                //check that all fields are filled in
+                //MARK:check that all fields are filled in
                 if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                 
                 return "Please fill in all fields"
             }
-                //Check if password is secure
+                //MARK:Check if password is secure
                 let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                 if Utilities.isPasswordValid(cleanedPassword) == false {
                     return"Please make sure your password is at least 8 characters, contains a special characters and a number"
@@ -66,13 +66,13 @@ class SignUpViewController: UIViewController {
                     showError(error!)
                 }
                 else{
-                    //Create cleaned versions of the data
+                    //MARK:Create cleaned versions of the data
                     let firstname = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     let lastname = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    //Create the user
+                    //MARK:Create the user
                     Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                         //Check for errors
                         if err != nil{
@@ -98,12 +98,13 @@ class SignUpViewController: UIViewController {
                 }
                 
                
-            }
+            }//showing error message 
             func showError(_ message:String){
                 
                 errorLabel.text = message
                 errorLabel.alpha = 1
             }
+            //navigate to homescreen
             func transitionToHome(){
                 let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.HomeViewController) as? HomeViewController
                 

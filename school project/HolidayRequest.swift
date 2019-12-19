@@ -17,16 +17,16 @@ enum HolidayError: Error{
 
 struct HolidayRequest {
     
-var resourceURL: URL
-    
-//my API key
-let API_KEY = "9aaf739f3c2e679361ec0e22d2ef6398293b886f"
+    var resourceURL: URL
+        
+    //my API key
+    let API_KEY = "9aaf739f3c2e679361ec0e22d2ef6398293b886f"
     
     init(countryCode : String) {
         
         let date = Date()
         let format = DateFormatter()
-        format.dateFormat  = "2019"
+        format.dateFormat  = "yyyy"
         let currentYear = format.string(from: date)
         
         let destinationURL = "https://calendarific.com/api/v2/holidays?&api_key=\(API_KEY)&country=\(countryCode)&year=\(currentYear)"
@@ -36,9 +36,9 @@ let API_KEY = "9aaf739f3c2e679361ec0e22d2ef6398293b886f"
         self.resourceURL = resourceURL
         
     }
-
-
-    func getHolidays (compleation: @escaping(Result<[HolidayDetails], HolidayError>) ->Void) {
+    //MARK: get holidays data 
+    //asynchronous
+     func getHolidays (compleation: @escaping(Result<[HolidayDetails], HolidayError>) ->Void) {
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
 
             guard let jsonData = data else {
@@ -55,7 +55,7 @@ let API_KEY = "9aaf739f3c2e679361ec0e22d2ef6398293b886f"
                 compleation(.failure(.canNotProcessData))
             }
 
-        }
+        }// start the fetching of the data 
         dataTask.resume()
     }
 }
